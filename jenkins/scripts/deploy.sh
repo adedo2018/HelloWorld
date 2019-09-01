@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_NAME=HelloWorld
+APP_NAME=HelloWorld-0.1.0
 TOMCAT_DIR=/Users/axhol/Documents/apache-tomcat-9.0.11
 
 # Deploy the .war file to tomcat and restart the server
