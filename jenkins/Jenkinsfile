@@ -9,6 +9,9 @@ pipeline {
         }
         stage('Build') {
             steps {
+                  when {
+                         branch 'master'
+                    }
                 sh 'mvn -B -DskipTests clean package'
             }
         }
@@ -30,13 +33,4 @@ pipeline {
         }
           
     }
-       post {
-            always { 
-                 echo 'One way or another, I have finished'
-               cleanWs()
-            }
-            unstable {
-                    echo 'I am unstable :/'
-            }
-         }
 }
