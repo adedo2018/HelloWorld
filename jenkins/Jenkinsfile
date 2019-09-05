@@ -21,5 +21,14 @@ pipeline {
                 sh './jenkins/scripts/deploy.sh'
             }
         }
+          post {
+            always {
+                    echo 'One way or another, I have finished'
+                    deleteDir() /* clean up our workspace */
+            }
+            unstable {
+                    echo 'I am unstable :/'
+            }
+         }
     }
 }
