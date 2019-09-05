@@ -1,6 +1,10 @@
 pipeline {
      agent any
     stages {
+         stage('Pre cleanup'){ 
+              echo 'One way or another, Im starting'
+              cleanWs() 
+         }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
