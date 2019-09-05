@@ -1,14 +1,5 @@
 pipeline {
      agent any
-     post {
-            always { 
-                 echo 'One way or another, Im starting'
-              cleanWs() 
-            }
-            unstable {
-                    echo 'I am unstable :/'
-            }
-         }
     stages {
         stage('Build') {
             steps {
